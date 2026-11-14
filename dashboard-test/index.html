@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transparansi Program Kerja | HMVA UI</title>
+  <link rel="stylesheet" href="styles/variable.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <link rel="icon" type="" href="assets/logo-hmva-ui-nobackground.png">
+</head>
+<body>
+  <main class="dashboard-container">
+    <!-- Header / Hero -->
+    <header class="dashboard-hero">
+      <div class="sync-badge">
+        <span class="sync-dot"></span>
+        <span>Live Sync • Google Sheets</span>
+      </div>
+      <h1>Dashboard Transparansi Program Kerja</h1>
+      <p>Pantau progres pelaksanaan kegiatan, status tahapan, dan capaian program kerja himpunan secara terbuka dan real-time.</p>
+    </header>
+
+    <!-- Ringkasan KPI -->
+    <section class="kpi-grid" aria-label="Ringkasan Capaian">
+      <div class="kpi-card kpi-blue">
+        <span class="kpi-label">Total Proker Publik</span>
+        <strong class="kpi-value" id="kpi-total">-</strong>
+        <span class="kpi-sub">Program kerja terpublikasi</span>
+      </div>
+      <div class="kpi-card kpi-red">
+        <span class="kpi-label">Proker Terlaksana</span>
+        <strong class="kpi-value" id="kpi-selesai">-</strong>
+        <span class="kpi-sub">Kegiatan telah selesai 100%</span>
+      </div>
+      
+    </section>
+
+    <!-- Kontrol Filter & Pencarian -->
+    <section class="filter-bar" aria-label="Filter Program Kerja">
+      <div class="search-box">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Cari nama program kerja atau deskripsi..."
+          aria-label="Cari program kerja"
+        />
+      </div>
+      <div class="filter-controls">
+        <select id="filter-bidang" aria-label="Filter berdasarkan bidang">
+          <option value="ALL">Semua Bidang</option>
+        </select>
+        <select id="filter-status" aria-label="Filter berdasarkan status">
+          <option value="ALL">Semua Status</option>
+          <option value="Terlaksana">Terlaksana</option>
+          <option value="Sedang Berlangsung">Sedang Berlangsung</option>
+          <option value="Perencanaan">Perencanaan</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Grid Daftar Proker -->
+    <section id="proker-list" class="proker-grid" aria-live="polite">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </section>
+  </main>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>
